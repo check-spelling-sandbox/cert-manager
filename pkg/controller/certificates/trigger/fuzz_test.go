@@ -52,7 +52,7 @@ func FuzzProcessItem(f *testing.F) {
 	f.Fuzz(func(t *testing.T, data []byte,
 		returnErr bool,
 		numberOfCerts,
-		numberOfsecrets int) {
+		numberOfSecrets int) {
 
 		fdp := gfh.NewConsumer(data)
 		existingCertificate := &v1.Certificate{}
@@ -88,7 +88,7 @@ func FuzzProcessItem(f *testing.F) {
 
 		// Create up to 10 secrets
 		existingKubeObjects := make([]runtime.Object, 0)
-		for i := 0; i < numberOfsecrets%10; i++ {
+		for i := 0; i < numberOfSecrets%10; i++ {
 			secret := &corev1.Secret{}
 			err := fdp.GenerateStruct(secret)
 			if err != nil {
