@@ -77,7 +77,7 @@ func FuzzProcessItem(f *testing.F) {
 		// secret, or it can use the secret as-is. At this point
 		// the fuzzer should already have x509 bytes specified,
 		// although they can be invalid if considering a real-
-		// world usecase. For example, they can contain non-
+		// world use case. For example, they can contain non-
 		// alphanumeric characters.
 		var x509Bytes []byte
 		mods := make([]gen.SecretModifier, 0)
