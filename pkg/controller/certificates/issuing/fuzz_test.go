@@ -57,7 +57,7 @@ func init() {
 // FuzzProcessItem tests the issuing controllers ProcessItem() method.
 // It creates a random certificate, a random secret and a random
 // issuing certificate and adds these to the builder. All of these objects
-// might be invalid and as such the fuzzer overapproximates which can
+// might be invalid and as such the fuzzer over-approximates which can
 // result in false positives.
 // The fuzzer does not verify how Cert-Manager behaves. It tests for panics
 // or unrecoverable issues such as stack overflows, excessive memory usage,

@@ -33,7 +33,7 @@ import (
 // method. It creates a fully-randomized certificate, secret and
 // multiple random requests and adds all of these to the builder.
 // These objects may be invalid compared to a real-world use case
-// and as such the fuzzer overapproximates. Depending on the
+// and as such the fuzzer over-approximates. Depending on the
 // number of false positives, this case be adjusted over time.
 //
 // The fuzzer does not verify how Cert-Manager behaves. It tests for panics

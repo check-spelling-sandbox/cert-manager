@@ -60,7 +60,7 @@ func init() {
 // FuzzProcessItem tests the requestmanager controllers ProcessItem() method.
 // It creates up to 10 random certificate requests, 1 certificate, a secret
 // and adds these to the builder. All of these objects might be invalid and
-// as such the fuzzer overapproximates which can result in false positives.
+// as such the fuzzer over-approximates which can result in false positives.
 // The fuzzer does not verify how Cert-Manager behaves. It tests for panics
 // or unrecoverable issues such as stack overflows, excessive memory usage,
 // deadlocks, infinite loops and other similar issues.
