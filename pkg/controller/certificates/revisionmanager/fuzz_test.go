@@ -31,7 +31,7 @@ import (
 // FuzzProcessItem tests the revisionmanager controllers ProcessItem() method.
 // It creates up to 10 random certificate requests and up to 10 certificates.
 // All of these objects might be invalid and as such the fuzzer
-// overapproximates which can result in false positives.
+// over-approximates which can result in false positives.
 // The fuzzer does not verify how Cert-Manager behaves. It tests for panics
 // or unrecoverable issues such as stack overflows, excessive memory usage,
 // deadlocks, infinite loops and other similar issues.
