@@ -34,7 +34,7 @@ import (
 // overapproximates which can result in false positives.
 // The fuzzer does not verify how Cert-Manager behaves. It tests for panics
 // or unrecoverable issues such as stack overflows, excessive memory usage,
-// deadlocks, inifinite loops and other similar issues.
+// deadlocks, infinite loops and other similar issues.
 func FuzzProcessItem(f *testing.F) {
 	f.Fuzz(func(t *testing.T,
 		data []byte,
