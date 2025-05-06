@@ -7,7 +7,17 @@
 
 \bgithub\.com(?:/[-\w]+)+
 
-\bcm(?:acme|)(?=[a-z])
+(?<=^|[^a-z])(?:(?:acme|another|api(s(?!erv)|)|apply(?!ing)|aws|az(?:ure|)|certificate(?:signing|)(s(?!ign)|)|client|cluster|config(?!u)|controller|core|cm|cr(?:approv(?:er|)|d|ca|(?=cl)|v(?!ault|enafi)|ypto)|csr|dns|edge|fake|feature|generic|gw|internal|key|kube(?:rnetes|(?!rnetes))|literal|master|meta(?:data|)|my(?!ster)|open(?!ing)|partial|request(?ing)|service|test(?!ing|ify)|util(?!i[sz]e|ity|ities)|vault|venafi))+(?=[a-z]{2})
+
+(?<=^|[^A-Z])(?:ACME|API|AZURE|CSR)(?=[A-Z]{2})
+
+(?<=[^A-Z])EC(?!MA)(?:[DR]SA|)(?=[A-Z])
+
+(?<=^|[^a-z])go(?:lang|test|(?=(?!al|od|ogle|vern)))(?=[a-z]{2})
+
+(?<=[^A-Z])(?:GO(?!VERN)(?:LANG|)|HMAC)(?=[A-Z])
+
+set-identifier='.*'
 
 # pkg/issuer/acme/setup_test.go
 (?:['"])Z\w+K(?:['"])
@@ -143,6 +153,9 @@ GHSA(?:-[0-9a-z]{4}){3}
 
 # to opt in
 \bto opt in\b
+
+# pass(ed|ing) in
+\bpass(?:ed|ing) in\b
 
 # acceptable duplicates
 # ls directory listings

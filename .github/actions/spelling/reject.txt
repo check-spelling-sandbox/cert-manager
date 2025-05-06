@@ -3,6 +3,15 @@
 benefitting
 occurences?
 ^dependan.*
+^develope$
+^developement$
+^developpe
+^Devers?$
+^devex
+^devide
+^Devinn?[ae]
+^devisal
+^devisor
 ^diables?$
 ^oer$
 Sorce

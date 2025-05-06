@@ -59,19 +59,19 @@ name: Check Spelling
 on:
   push:
     branches:
-      - "**"
+      - '**'
     tags-ignore:
-      - "**"
+      - '**'
   pull_request_target:
     branches:
-      - "**"
+      - '**'
     types:
-      - "opened"
-      - "reopened"
-      - "synchronize"
+      - 'opened'
+      - 'reopened'
+      - 'synchronize'
   issue_comment:
     types:
-      - "created"
+      - 'created'
 
 jobs:
   spelling:
@@ -113,21 +113,20 @@ jobs:
             cspell:software-terms/softwareTerms.txt
             cspell:k8s/k8s.txt
             cspell:golang/go.txt
-            cspell:node/node.txt
             cspell:php/php.txt
+            cspell:node/node.txt
             cspell:python/python/python-lib.txt
             cspell:aws/aws.txt
-            cspell:shell/shell-all-words.txt
-            cspell:npm/npm.txt
-            cspell:java/java.txt
             cspell:python/common/extra.txt
-            cspell:filetypes/filetypes.txt
+            cspell:shell/shell-all-words.txt
+            cspell:java/java.txt
+            cspell:npm/npm.txt
             cspell:django/django.txt
-            cspell:fullstack/fullstack.txt
-            cspell:r/r.txt
-            cspell:java/java-terms.txt
             cspell:html/html.txt
+            cspell:filetypes/filetypes.txt
             cspell:dart/dart.txt
+            cspell:java/java-terms.txt
+            cspell:elixir/elixir.txt
 
   update:
     name: Update PR
@@ -151,4 +150,4 @@ jobs:
         with:
           experimental_apply_changes_via_bot: 1
           checkout: true
-          ssh_key: "${{ secrets.CHECK_SPELLING }}"
+          ssh_key: '${{ secrets.CHECK_SPELLING }}'
