@@ -373,7 +373,7 @@ func TestSync(t *testing.T) {
 				ExpectedActions: []testpkg.Action{},
 			},
 		},
-		"should return nil (no action) if certificate request invalidrequest is set to true": {
+		"should return nil (no action) if certificate request InvalidRequest is set to true": {
 			certificateRequest: gen.CertificateRequestFrom(baseCRNotApproved,
 				gen.SetCertificateRequestStatusCondition(cmapi.CertificateRequestCondition{
 					Type:               cmapi.CertificateRequestConditionInvalidRequest,
