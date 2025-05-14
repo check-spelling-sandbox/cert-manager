@@ -104,7 +104,7 @@ func TestGeneratePrivateKeyForCertificate(t *testing.T) {
 			expectErrStr: "unsupported private key algorithm specified",
 		},
 		{
-			name:      "eddsa key with random keysize",
+			name:      "Ed25519 key with random keysize",
 			keyAlgo:   v1.Ed25519KeyAlgorithm,
 			keySize:   100,
 			expectErr: false,
@@ -156,7 +156,7 @@ func TestGeneratePrivateKeyForCertificate(t *testing.T) {
 			expectErr: false,
 		},
 		{
-			name:      "eddsa with keysize not specified",
+			name:      "Ed25519 with keysize not specified",
 			keyAlgo:   v1.Ed25519KeyAlgorithm,
 			expectErr: false,
 		},
@@ -235,7 +235,7 @@ func TestGeneratePrivateKeyForCertificate(t *testing.T) {
 				}
 
 				if test.keyAlgo == "ed25519" {
-					// For eddsa algorithm keysize is ignored
+					// For Ed25519 algorithm keysize is ignored
 					_, ok := privateKey.(ed25519.PrivateKey)
 					if !ok {
 						t.Errorf("expected ed25519 private key, but got %T", privateKey)
