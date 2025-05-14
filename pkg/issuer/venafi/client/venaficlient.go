@@ -169,7 +169,7 @@ func configForIssuer(iss cmapi.GenericIssuer, secretsLister internalinformers.Se
 		username := string(tppSecret.Data[tppUsernameKey])
 		password := string(tppSecret.Data[tppPasswordKey])
 		clientId := string(tppSecret.Data[tppClientIdKey])
-		// fallback to default client-id if not provided
+		// fall back to default client-id if not provided
 		if clientId == "" {
 			clientId = defaultTppClientId
 		}

@@ -252,7 +252,7 @@ func partialChallengeSpecForAuthorization(ctx context.Context, issuer cmapi.Gene
 
 		dbg.Info("not selecting solver as this one's number of matching labels is equal to or less than the last one (reached end of loop)")
 		// if we get here, the number of matches is less than or equal so we
-		// fallback to choosing the first in the list
+		// fall back to choosing the first in the list
 	}
 
 	if selectedSolver == nil || selectedChallenge == nil {
