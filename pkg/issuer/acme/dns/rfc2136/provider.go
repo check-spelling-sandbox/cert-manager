@@ -120,7 +120,7 @@ func (s *Solver) Initialize(kubeClientConfig *restclient.Config, stopCh <-chan s
 	for _, opt := range s.initOpts {
 		opt(s)
 	}
-	// Only start a secrets informerfactory if it is needed (if the solver
+	// Only start a secrets informer factory if it is needed (if the solver
 	// is not already initialized with a secrets lister) This is legacy
 	// functionality and is currently only used in integration tests.
 	if s.secretLister == nil {
