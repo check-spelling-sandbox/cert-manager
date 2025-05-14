@@ -159,7 +159,7 @@ func checkAuthoritativeNss(ctx context.Context, fqdn, value string, nameservers 
 			return false, nil
 		}
 	}
-	logf.FromContext(ctx).V(logf.DebugLevel).Info("Selfchecking using the DNS Lookup method was successful")
+	logf.FromContext(ctx).V(logf.DebugLevel).Info("Self-checking using the DNS Lookup method was successful")
 	return true, nil
 }
 
