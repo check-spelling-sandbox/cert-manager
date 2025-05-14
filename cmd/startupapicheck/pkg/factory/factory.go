@@ -57,7 +57,7 @@ func New(cmd *cobra.Command) *Factory {
 
 	kubeConfigFlags.AddFlags(cmd.Flags())
 
-	// Setup a PreRun to populate the Factory. Catch the existing PreRun command
+	// Set up a PreRun to populate the Factory. Catch the existing PreRun command
 	// if one was defined, and execute it second.
 	existingPreRun := cmd.PreRunE
 	cmd.PreRunE = func(cmd *cobra.Command, args []string) error {

@@ -43,7 +43,7 @@ var _ = ginkgo.SynchronizedBeforeSuite(func(ctx context.Context) []byte {
 
 	isGinkgoProcessNumberOne = true
 
-	// We first setup the global addons, but do not provision them yet.
+	// We first set up the global addons, but do not provision them yet.
 	// This is because we need to transfer the data from ginkgo process #1
 	// to the other ginkgo processes.
 	toBeTransferred, err := addon.SetupGlobalsPrimary(cfg)
