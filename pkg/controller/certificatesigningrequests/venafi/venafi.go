@@ -124,8 +124,8 @@ func (v *Venafi) Sign(ctx context.Context, csr *certificatesv1.CertificateSignin
 			message := fmt.Sprintf("Failed to parse %q annotation: %s", experimentalapi.CertificateSigningRequestVenafiCustomFieldsAnnotationKey, err)
 			v.recorder.Event(csr, corev1.EventTypeWarning, "ErrorCustomFields", message)
 			util.CertificateSigningRequestSetFailed(csr, "ErrorCustomFields", message)
-			_, userr := util.UpdateOrApplyStatus(ctx, v.certClient, csr, certificatesv1.CertificateFailed, v.fieldManager)
-			return userr
+			_, err := util.UpdateOrApplyStatus(ctx, v.certClient, csr, certificatesv1.CertificateFailed, v.fieldManager)
+			return err
 		}
 	}
 
@@ -135,8 +135,8 @@ func (v *Venafi) Sign(ctx context.Context, csr *certificatesv1.CertificateSignin
 		log.Error(err, message)
 		v.recorder.Event(csr, corev1.EventTypeWarning, "ErrorParseDuration", message)
 		util.CertificateSigningRequestSetFailed(csr, "ErrorParseDuration", message)
-		_, userr := util.UpdateOrApplyStatus(ctx, v.certClient, csr, certificatesv1.CertificateFailed, v.fieldManager)
-		return userr
+		_, err := util.UpdateOrApplyStatus(ctx, v.certClient, csr, certificatesv1.CertificateFailed, v.fieldManager)
+		return err
 	}
 
 	// The signing process with Venafi is slow. The "pickupID" allows us to track
@@ -155,16 +155,16 @@ func (v *Venafi) Sign(ctx context.Context, csr *certificatesv1.CertificateSignin
 				log.Error(err, "")
 				v.recorder.Event(csr, corev1.EventTypeWarning, "ErrorCustomFields", err.Error())
 				util.CertificateSigningRequestSetFailed(csr, "ErrorCustomFields", err.Error())
-				_, userr := util.UpdateOrApplyStatus(ctx, v.certClient, csr, certificatesv1.CertificateFailed, v.fieldManager)
-				return userr
+				_, err := util.UpdateOrApplyStatus(ctx, v.certClient, csr, certificatesv1.CertificateFailed, v.fieldManager)
+				return err
 
 			default:
 				message := fmt.Sprintf("Failed to request venafi certificate: %s", err)
 				log.Error(err, message)
 				v.recorder.Event(csr, corev1.EventTypeWarning, "ErrorRequest", message)
 				util.CertificateSigningRequestSetFailed(csr, "ErrorRequest", message)
-				_, userr := util.UpdateOrApplyStatus(ctx, v.certClient, csr, certificatesv1.CertificateFailed, v.fieldManager)
-				return userr
+				_, err := util.UpdateOrApplyStatus(ctx, v.certClient, csr, certificatesv1.CertificateFailed, v.fieldManager)
+				return err
 			}
 		}
 
@@ -205,8 +205,8 @@ func (v *Venafi) Sign(ctx context.Context, csr *certificatesv1.CertificateSignin
 		log.Error(err, message)
 		v.recorder.Event(csr, corev1.EventTypeWarning, "ErrorParse", message)
 		util.CertificateSigningRequestSetFailed(csr, "ErrorParse", message)
-		_, userr := util.UpdateOrApplyStatus(ctx, v.certClient, csr, certificatesv1.CertificateFailed, v.fieldManager)
-		return userr
+		_, err := util.UpdateOrApplyStatus(ctx, v.certClient, csr, certificatesv1.CertificateFailed, v.fieldManager)
+		return err
 	}
 
 	csr.Status.Certificate = bundle.ChainPEM
