@@ -37,7 +37,7 @@ import (
 	logf "github.com/cert-manager/cert-manager/pkg/logs"
 )
 
-// handleSecretReferenceWorkFunc is a function that returns am informer event
+// handleSecretReferenceWorkFunc is a function that returns an informer event
 // handler work function, which is used to sync CertificateSigningRequests that
 // reference the synced Secret through the
 // "experimental.cert-manager.io/private-key-secret-name" annotation.
