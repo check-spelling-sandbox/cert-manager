@@ -42,7 +42,7 @@ func (err ErrCustomFieldsType) Error() string {
 
 var ErrorMissingSubject = errors.New("Certificate requests submitted to Venafi issuers must have the 'commonName' field or at least one other subject field set.")
 
-// This function sends a request to Venafi to for a signed certificate.
+// This function sends a request to Venafi for a signed certificate.
 // The CSR will be decoded to be validated against the zone configuration policy.
 // Upon the template being successfully defaulted and validated, the CSR will be sent, as is.
 // It will return a pickup ID which can be used with RetrieveCertificate to get the certificate
