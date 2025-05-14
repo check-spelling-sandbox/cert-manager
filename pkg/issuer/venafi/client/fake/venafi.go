@@ -50,7 +50,7 @@ func (v *Venafi) ReadZoneConfiguration() (*endpoint.ZoneConfiguration, error) {
 
 func (v *Venafi) SetClient(endpoint.Connector) {}
 
-// VerifyCredentials will return VerifyCredentialsFn if set, otherwise nil.
+// VerifyCredentials will return VerifyCredentialsFn if set; otherwise, nil.
 func (v *Venafi) VerifyCredentials() error {
 	if v.VerifyCredentialsFn != nil {
 		return v.VerifyCredentialsFn()

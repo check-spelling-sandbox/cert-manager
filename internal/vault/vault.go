@@ -447,7 +447,7 @@ func (v *Vault) requestTokenWithAppRoleRef(client Client, appRole *v1.VaultAppRo
 }
 
 func (v *Vault) requestTokenWithClientCertificate(client Client, clientCertificateAuth *v1.VaultClientCertificateAuth) (string, error) {
-	// If secretName is set, load client certificate from Secret, otherwise assume that a
+	// If secretName is set, load client certificate from Secret; otherwise, assume that a
 	// fitting client certificate is loaded in the client already.
 	if len(clientCertificateAuth.SecretName) != 0 {
 		secret, err := v.secretsLister.Secrets(v.namespace).Get(clientCertificateAuth.SecretName)
