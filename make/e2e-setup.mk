@@ -267,14 +267,14 @@ feature_gates_controller := $(subst $(space),\$(comma),$(filter AllAlpha=% AllBe
 feature_gates_webhook := $(subst $(space),\$(comma),$(filter AllAlpha=% AllBeta=% LiteralCertificateSubject=% NameConstraints=% OtherNames=%, $(subst $(comma),$(space),$(FEATURE_GATES))))
 feature_gates_cainjector := $(subst $(space),\$(comma),$(filter AllAlpha=% AllBeta=% ServerSideApply=% CAInjectorMerging=%, $(subst $(comma),$(space),$(FEATURE_GATES))))
 
-# When testing an published chart the repo can be configured using
+# When testing a published chart the repo can be configured using
 # E2E_CERT_MANAGER_REPO
 E2E_CERT_MANAGER_REPO ?= https://charts.jetstack.io
-# When testing an published chart the chart name can be configured using
+# When testing a published chart the chart name can be configured using
 # E2E_CERT_MANAGER_CHART. This can also be set to a local path to test a
 # downloaded chart
 E2E_CERT_MANAGER_CHART ?= cert-manager
-# When testing an published chart, default to the latest release
+# When testing a published chart, default to the latest release
 E2E_CERT_MANAGER_VERSION ?=
 
 # Example running E2E tests against a downloaded chart:
