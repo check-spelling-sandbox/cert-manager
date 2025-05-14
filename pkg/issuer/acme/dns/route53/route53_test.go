@@ -359,7 +359,7 @@ func TestRoute53Cleanup(t *testing.T) {
 }
 
 func TestAssumeRole(t *testing.T) {
-	// Set the AWS config file to a non-existent file to ensure that the
+	// Set the AWS config file to a nonexistent file to ensure that the
 	// SDK does not load any local configuration.
 	t.Setenv("AWS_CONFIG_FILE", "/dev/null")
 	creds := &ststypes.Credentials{

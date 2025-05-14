@@ -199,7 +199,7 @@ func TestFindZoneByFqdn(t *testing.T) {
 		},
 		{
 			// This test shows that FindZoneByFqdn can work is able to continue
-			// climbing up the tree when a non-existent domain is found. We do
+			// climbing up the tree when a nonexistent domain is found. We do
 			// this because the `_acme-challenge` subdomain may not exist yet,
 			// but we still want to find the zone for the domain.
 			givenFQDN:  "foo.google.com.",
