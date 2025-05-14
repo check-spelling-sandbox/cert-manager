@@ -33,7 +33,7 @@ import (
 // If the lengths are different, genericEqualUnsorted returns false. Otherwise, the
 // elements are sorted using the comparison function, and the sorted slices are
 // compared element by element using the same comparison function. If all elements
-// are equal, genericEqualUnsorted returns true. Otherwise it returns false.
+// are equal, genericEqualUnsorted returns true. Otherwise, it returns false.
 func genericEqualUnsorted[S ~[]E, E any](
 	s1 S, s2 S,
 	cmp func(a, b E) int,
