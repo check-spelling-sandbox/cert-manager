@@ -67,7 +67,7 @@ func TestAcme_Setup(t *testing.T) {
 			gen.SetIssuerConditionLastTransitionTime(&nowMetaTime))
 		issuerSecretKeyName = "test"
 
-		ecdsaPrivKey = mustGenerateEDCSAKey(t)
+		ecdsaPrivKey = mustGenerateECDSAKey(t)
 		rsaPrivKey   = mustGenerateRSAKey(t)
 
 		notFoundErr    = apierrors.NewNotFound(corev1.Resource("test"), "test")
@@ -639,7 +639,7 @@ func parseURLErr(s string) error {
 	return err
 }
 
-func mustGenerateEDCSAKey(t *testing.T) crypto.Signer {
+func mustGenerateECDSAKey(t *testing.T) crypto.Signer {
 	t.Helper()
 	key, err := pki.GenerateECPrivateKey(256)
 	if err != nil {
