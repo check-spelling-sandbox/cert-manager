@@ -35,12 +35,12 @@ import (
 
 const maxConcurrentChallenges = 60
 
-func randomChallenge(dnsNamelength int) *cmacme.Challenge {
-	if dnsNamelength == 0 {
-		dnsNamelength = 10
+func randomChallenge(dnsNameLength int) *cmacme.Challenge {
+	if dnsNameLength == 0 {
+		dnsNameLength = 10
 	}
 	return gen.Challenge("test-"+rand.String(10),
-		gen.SetChallengeDNSName(rand.String(dnsNamelength)),
+		gen.SetChallengeDNSName(rand.String(dnsNameLength)),
 		gen.SetChallengeType(cmacme.ACMEChallengeTypeHTTP01))
 }
 
