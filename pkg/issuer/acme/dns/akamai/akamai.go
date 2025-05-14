@@ -250,7 +250,7 @@ func makeTxtRecordName(fqdn, hostedDomain string) (string, error) {
 	return recName, nil
 }
 
-// GetRecord gets a single Recordset as RecordBody. Sets Akamai OPEN Edgegrid API
+// GetRecord gets a single RecordSet as RecordBody. Sets Akamai OPEN Edgegrid API
 // global variable.
 func (o OpenDNSConfig) GetRecord(zone string, name string, recordType string) (*dns.RecordBody, error) {
 
