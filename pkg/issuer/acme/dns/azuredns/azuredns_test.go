@@ -169,10 +169,10 @@ func TestGetAuthorizationFederatedSPT(t *testing.T) {
 	}
 
 	// The initial federated token is never used, so we don't care about the value yet
-	// Though, it's a requirement from adal to have a non-empty value set
+	// Though, it's a requirement from ADAL to have a non-empty value set
 	populateFederatedToken(t, f.Name(), "random-jwt")
 
-	// Prepare environment variables adal will rely on. Skip changes for some envs if they are already defined (=live environment)
+	// Prepare environment variables ADAL will rely on. Skip changes for some envs if they are already defined (=live environment)
 	// Envs themselves are described here: https://azure.github.io/azure-workload-identity/docs/installation/mutating-admission-webhook.html
 	if os.Getenv("AZURE_TENANT_ID") == "" {
 		// TODO(wallrj): This is a hack. It is a quick way to `DisableInstanceDiscovery` during tests,
